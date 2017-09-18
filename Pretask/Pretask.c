@@ -49,7 +49,7 @@ int main() {
 				printf("\nName is %s", head->name);
 				break;
 			case 2://removing by index
-				if (head == NULL)
+				if (first == NULL)
 				{
 					printf("There're no players in list!");
 					break;
@@ -81,16 +81,18 @@ int main() {
 				break;
 			case 4://clearing the list
 				;
-				Player *current = first;
+				Player *current = NULL;
+				current = first;
 				Player *next;
 
-				while (current != head->next)
+				while (current != NULL)
 				{
 					next = current->next;
 					free(current);
 					current = next;
 				}
-				//first = NULL;
+				first = NULL;
+				printf("List is empty!");
 				break;
 			case 5:
 				return 0;
